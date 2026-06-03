@@ -1,4 +1,8 @@
+import sys
 import os
+# 🛠️ Force Python to look at the project root directory so 'from src.data_processing' works perfectly
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import joblib
 import pandas as pd
 import numpy as np
