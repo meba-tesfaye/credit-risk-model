@@ -28,7 +28,8 @@ def train_and_track_model():
         'ProductCategory': np.random.choice(['utility', 'financial_services', 'airtime', 'ticket'], 100),
         'ChannelId': np.random.choice(['ChannelId_1', 'ChannelId_2', 'ChannelId_3'], 100),
         'ProviderId': np.random.choice(['ProviderId_1', 'ProviderId_2', 'ProviderId_4'], 100),
-        'TransactionStartTime': pd.date_range(start='2026-01-01', periods=100, freq='H').astype(str)
+        # 🛠️ Fixed to lowercase 'h' for modern Pandas/Python 3.14 compatibility
+        'TransactionStartTime': pd.date_range(start='2026-01-01', periods=100, freq='h').astype(str)
     }
     df = pd.DataFrame(mock_data)
     y = np.where((df['Amount'] > 6000) & (df['PricingStrategy'] == 2), 1, 0)
