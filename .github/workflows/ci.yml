@@ -24,6 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install fastapi uvicorn pydantic joblib scikit-learn pandas numpy
 
-    - name: Validate API Code Syntax
+- name: Validate API Code Syntax
       run: |
-        python -m py_compile src/app.py
+        python -m py_compile src/api/main.py
